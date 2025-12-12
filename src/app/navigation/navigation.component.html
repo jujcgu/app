@@ -7,15 +7,24 @@
     [mode]="(isHandset$ | async) ? 'over' : 'side'"
     [opened]="(isHandset$ | async) === false"
   >
-    <mat-toolbar>Menu</mat-toolbar>
+    <mat-toolbar>
+      <button matIconButton>
+        <mat-icon>menu</mat-icon>
+      </button>
+      <span>Menu</span>
+    </mat-toolbar>
     <mat-nav-list>
       <a mat-list-item routerLink="/">
-        dashboard
+        Home
         <mat-icon matListItemIcon>home</mat-icon>
       </a>
       <a mat-list-item routerLink="/address-form">
-        address-form
+        Add address
         <mat-icon matListItemIcon>add_location_alt</mat-icon>
+      </a>
+      <a mat-list-item routerLink="/table">
+        Table
+        <mat-icon matListItemIcon>table</mat-icon>
       </a>
     </mat-nav-list>
   </mat-sidenav>
@@ -27,6 +36,11 @@
       </button>
       }
       <span>app</span>
+      <span class="spacer"></span>
+      <button matButton="outlined" routerLink="/login">
+        <mat-icon>login</mat-icon>
+        Login
+      </button>
     </mat-toolbar>
     <router-outlet></router-outlet>
   </mat-sidenav-content>
